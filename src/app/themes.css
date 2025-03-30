@@ -1,0 +1,13 @@
+.theme-minimal {
+  --background: oklch(0, 0, 0);
+  --foreground: oklch(0, 0, 100);
+  --border: oklch(0, 0, 100);
+  --ring: oklch(0, 0, 100);
+
+  @variant dark {
+    --background: oklch(0, 0, 100);
+    --foreground: oklch(0, 0, 0);
+    --border: oklch(100, 0, 0);
+    --ring: oklch(100, 0, 0);
+  }
+}
