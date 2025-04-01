@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,23 +16,33 @@ import { useThemeConfig } from "@/providers/theme-provider"
 export function ThemeSelector() {
   const { setTheme } = useThemeConfig()
 
+  const [mounted, setMounted] = useState<boolean>(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button>Open</Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
-        <DropdownMenuLabel>Theme</DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        {themes.map((theme) => (
-          <DropdownMenuItem
-            key={theme.name}
-            onClick={() => setTheme(theme.name)}
-          >
-            {theme.label}
-          </DropdownMenuItem>
-        ))}
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <>
+      {mounted && (
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button>Open</Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-56">
+            <DropdownMenuLabel>Theme</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            {themes.map((theme) => (
+              <DropdownMenuItem
+                key={theme.name}
+                onClick={() => setTheme(theme.name)}
+              >
+                {theme.label}
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+      )}
+    </>
   )
 }
