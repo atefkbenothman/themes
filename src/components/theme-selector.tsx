@@ -29,9 +29,12 @@ export function ThemeSelector() {
           <DropdownMenuTrigger asChild>
             <Button>Open</Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-56">
+          <DropdownMenuContent className="w-56" align="start">
             <DropdownMenuLabel>Theme</DropdownMenuLabel>
             <DropdownMenuSeparator />
+            <DropdownMenuItem onClick={() => setTheme("default")}>
+              Default
+            </DropdownMenuItem>
             {themes.map((theme) => (
               <DropdownMenuItem
                 key={theme.name}

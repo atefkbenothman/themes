@@ -6,18 +6,10 @@ export function TabsComponent() {
       <p>Tabs</p>
       <Tabs defaultValue="two">
         <TabsList>
-          <TabsTrigger value="one" className="dark:border-none">
-            One
-          </TabsTrigger>
-          <TabsTrigger value="two" className="dark:border-none">
-            Two
-          </TabsTrigger>
-          <TabsTrigger value="three" className="dark:border-none">
-            Three
-          </TabsTrigger>
-          <TabsTrigger value="four" className="dark:border-none">
-            Four
-          </TabsTrigger>
+          <TabsTrigger value="one">One</TabsTrigger>
+          <TabsTrigger value="two">Two</TabsTrigger>
+          <TabsTrigger value="three">Three</TabsTrigger>
+          <TabsTrigger value="four">Four</TabsTrigger>
         </TabsList>
       </Tabs>
     </>

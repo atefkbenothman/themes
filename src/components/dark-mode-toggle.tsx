@@ -15,6 +15,7 @@ export function DarkModeToggle() {
 
   return (
     <>
+      <p>Dark Mode</p>
       {mounted && (
         <Tabs defaultValue={theme ? theme : ""}>
           <TabsList>
