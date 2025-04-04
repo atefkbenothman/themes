@@ -21,6 +21,9 @@ import { toast } from "sonner"
 import { LoginForm } from "@/components/login-form"
 import { LoginForm2 } from "@/components/login-form-2"
 import { useSoundEffect } from "@/hooks/use-sound-effect"
+import { AlertComponent } from "@/components/alerts"
+import { PaymentMethod } from "@/components/payment-methods"
+import { CookieSettings } from "@/components/cookie-settings"
 
 export default function Home() {
   const { theme } = useThemeConfig()
@@ -55,6 +58,8 @@ export default function Home() {
       <div className="border-b"></div>
       <p>Toast</p>
       <Button onClick={handleToastClick}>Toast</Button>
+      <div className="border-b"></div>
+      <AlertComponent />
       <div className="border-b"></div>
       <p>Cmd + k</p>
       <Button className="w-56">
@@ -96,6 +101,16 @@ export default function Home() {
         </div>
         <div className="flex justify-center">
           <LoginForm2 />
+        </div>
+      </div>
+      <div className="border-b"></div>
+      <p>Examples</p>
+      <div className="grid grid-cols-2">
+        <div className="flex justify-center">
+          <PaymentMethod />
+        </div>
+        <div className="flex justify-center">
+          <CookieSettings />
         </div>
       </div>
       <div className="border-b"></div>
