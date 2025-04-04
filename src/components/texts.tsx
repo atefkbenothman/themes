@@ -33,6 +33,9 @@ export function TextComponent() {
       </div>
       <div>
         <p>Font Size</p>
+        <p className="text-tiny">
+          the quick brown fox jumps over the lazy dog (tiny)
+        </p>
         <p className="text-xs">
           the quick brown fox jumps over the lazy dog (xs)
         </p>

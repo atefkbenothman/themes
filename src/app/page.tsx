@@ -16,12 +16,24 @@ import { SwitchComponent } from "@/components/switches"
 import { SelectComponent } from "@/components/selects"
 import { TextComponent } from "@/components/texts"
 import { DropdownMenuComponent } from "@/components/dropdowns"
+import { Button } from "@/components/ui/button"
+import { toast } from "sonner"
+import { LoginForm } from "@/components/login-form"
+import { LoginForm2 } from "@/components/login-form-2"
+import { useSoundEffect } from "@/hooks/use-sound-effect"
 
 export default function Home() {
   const { theme } = useThemeConfig()
+  const { play, AudioComponent } = useSoundEffect("/hover.mp3", { volume: 0.8 })
+
+  const handleToastClick = () => {
+    toast("hello world")
+    play()
+  }
 
   return (
     <div className="space-y-4 p-4">
+      {AudioComponent}
       <p className="font-bold">Home</p>
       <div className="border-b"></div>
       <TextComponent />
@@ -41,6 +53,22 @@ export default function Home() {
       <div className="border-b"></div>
       <CardsComponent />
       <div className="border-b"></div>
+      <p>Toast</p>
+      <Button onClick={handleToastClick}>Toast</Button>
+      <div className="border-b"></div>
+      <p>Cmd + k</p>
+      <Button className="w-56">
+        <div>Search...</div>
+        <div className="ml-auto flex flex-row gap-1">
+          <p className="text-tiny flex w-[1rem] items-center justify-center rounded-sm border">
+            ⌘
+          </p>
+          <p className="text-tiny flex w-[1rem] items-center justify-center rounded-sm border">
+            K
+          </p>
+        </div>
+      </Button>
+      <div className="border-b"></div>
       <DropdownMenuComponent />
       <div className="border-b"></div>
       <div className="flex grid grid-cols-5 items-center">
@@ -58,6 +86,16 @@ export default function Home() {
         </div>
         <div>
           <SwitchComponent />
+        </div>
+      </div>
+      <div className="border-b"></div>
+      <p>Login</p>
+      <div className="grid grid-cols-2">
+        <div className="flex justify-center">
+          <LoginForm />
+        </div>
+        <div className="flex justify-center">
+          <LoginForm2 />
         </div>
       </div>
       <div className="border-b"></div>
