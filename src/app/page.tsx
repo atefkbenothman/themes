@@ -15,6 +15,7 @@ import { ToggleComponent } from "@/components/toggles"
 import { SwitchComponent } from "@/components/switches"
 import { SelectComponent } from "@/components/selects"
 import { TextComponent } from "@/components/texts"
+import { DropdownMenuComponent } from "@/components/dropdowns"
 
 export default function Home() {
   const { theme } = useThemeConfig()
@@ -39,6 +40,8 @@ export default function Home() {
       <InputsComponent />
       <div className="border-b"></div>
       <CardsComponent />
+      <div className="border-b"></div>
+      <DropdownMenuComponent />
       <div className="border-b"></div>
       <div className="flex grid grid-cols-5 items-center">
         <div>

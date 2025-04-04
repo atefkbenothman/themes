@@ -52,17 +52,6 @@
   --shadow-lg: var(--shadow-lg);
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
-
-  /* --text-xs: var(--text-xs);
-  --text-xs--line-height: var(--text-xs--line-height);
-  --text-sm: var(--text-sm);
-  --text-sm--line-height: var(--text-sm--line-height); */
-  /* --text-base: var(--text-base)
-  --text-base--line-height: var(--text-base--line-height); */
-  /* --text-lg: var(--text-lg);
-  --text-lg--line-height: var(--text-lg--line-height);
-  --text-xl: var(--text-xl);
-  --text-xl--line-height: var(--text-xl--line-height); */
 }
 
 :root {

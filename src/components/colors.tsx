@@ -1,104 +1,84 @@
+"use client"
+
+import { useState, useRef } from "react"
+import { Card } from "@/components/ui/card"
+
 function Wrapper({ children }: { children: React.ReactNode }) {
-  return <div className="flex flex-col">{children}</div>
+  const [isHovering, setIsHovering] = useState(false)
+  const audioRef = useRef<HTMLAudioElement | null>(null)
+  const hasPlayedRef = useRef(false)
+
+  const handleMouseEnter = () => {
+    setIsHovering(true)
+
+    // Only play audio once per hover event
+    if (!hasPlayedRef.current && audioRef.current) {
+      audioRef.current.currentTime = 0
+      audioRef.current.play()
+      hasPlayedRef.current = true
+    }
+  }
+
+  const handleMouseLeave = () => {
+    setIsHovering(false)
+    hasPlayedRef.current = false
+  }
+
+  return (
+    <div
+      className={`flex w-fit flex-col ${
+        isHovering ? "scale-105 transform" : ""
+      }`}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {children}
+      <audio ref={audioRef} preload="auto">
+        <source src="/hover.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+  )
 }
+
+const colorItems = [
+  { name: "Background", className: "bg-background" },
+  { name: "Foreground", className: "bg-foreground" },
+  { name: "Card", className: "bg-card" },
+  { name: "Popover", className: "bg-popover" },
+  { name: "Popover Foreground", className: "bg-popover-foreground" },
+  { name: "Primary", className: "bg-primary" },
+  { name: "Primary Foreground", className: "bg-primary-foreground" },
+  { name: "Secondary", className: "bg-secondary" },
+  { name: "Secondary Foreground", className: "bg-secondary-foreground" },
+  { name: "Muted", className: "bg-muted" },
+  { name: "Muted Foreground", className: "bg-muted-foreground" },
+  { name: "Accent", className: "bg-accent" },
+  { name: "Accent Foreground", className: "bg-accent-foreground" },
+  { name: "Destructive", className: "bg-destructive" },
+  { name: "Destructive Foreground", className: "bg-destructive-foreground" },
+  { name: "Border", className: "bg-border" },
+  { name: "Input", className: "bg-input" },
+  { name: "Ring", className: "bg-ring" },
+  { name: "Chart 1", className: "bg-chart-1" },
+  { name: "Chart 2", className: "bg-chart-2" },
+  { name: "Chart 3", className: "bg-chart-3" },
+  { name: "Chart 4", className: "bg-chart-4" },
+  { name: "Chart 5", className: "bg-chart-5" },
+]
 
 export function Colors() {
   return (
     <>
       <p>Colors</p>
       <div className="grid grid-cols-7 space-y-2">
-        <Wrapper>
-          <p className="text-xs">Background</p>
-          <div className="bg-background border-foreground h-16 w-16 border" />
-        </Wrapper>
-        <Wrapper>
-          <p className="text-xs">Foreground</p>
-          <div className="bg-foreground border-foreground h-16 w-16 border" />
-        </Wrapper>
-        <Wrapper>
-          <p className="text-xs">Card</p>
-          <div className="bg-card border-foreground h-16 w-16 border" />
-        </Wrapper>
-        <Wrapper>
-          <p className="text-xs">Popover</p>
-          <div className="bg-popover border-foreground h-16 w-16 border" />
-        </Wrapper>
-        <Wrapper>
-          <p className="text-xs">Popover Foreground</p>
-          <div className="bg-popover-foreground border-foreground h-16 w-16 border" />
-        </Wrapper>
-        <Wrapper>
-          <p className="text-xs">Primary</p>
-          <div className="bg-primary border-foreground h-16 w-16 border" />
-        </Wrapper>
-        <Wrapper>
-          <p className="text-xs">Primary Foreground</p>
-          <div className="bg-primary-foreground border-foreground h-16 w-16 border" />
-        </Wrapper>
-        <Wrapper>
-          <p className="text-xs">Secondary</p>
-          <div className="bg-secondary border-foreground h-16 w-16 border" />
-        </Wrapper>
-        <Wrapper>
-          <p className="text-xs">Secondary Foreground</p>
-          <div className="bg-secondary-foreground border-foreground h-16 w-16 border" />
-        </Wrapper>
-        <Wrapper>
-          <p className="text-xs">Muted</p>
-          <div className="bg-muted border-foreground h-16 w-16 border" />
-        </Wrapper>
-        <Wrapper>
-          <p className="text-xs">Muted Foreground</p>
-          <div className="bg-muted-foreground border-foreground h-16 w-16 border" />
-        </Wrapper>
-        <Wrapper>
-          <p className="text-xs">Accent</p>
-          <div className="bg-accent border-foreground h-16 w-16 border" />
-        </Wrapper>
-        <Wrapper>
-          <p className="text-xs">Accent Foreground</p>
-          <div className="bg-accent-foreground border-foreground h-16 w-16 border" />
-        </Wrapper>
-        <Wrapper>
-          <p className="text-xs">Destructive</p>
-          <div className="bg-destructive border-foreground h-16 w-16 border" />
-        </Wrapper>
-        <Wrapper>
-          <p className="text-xs">Destructive Foreground</p>
-          <div className="bg-destructive-foreground border-foreground h-16 w-16 border" />
-        </Wrapper>
-        <Wrapper>
-          <p className="text-xs">Border</p>
-          <div className="bg-border border-foreground h-16 w-16 border" />
-        </Wrapper>
-        <Wrapper>
-          <p className="text-xs">Input</p>
-          <div className="bg-input border-foreground h-16 w-16 border" />
-        </Wrapper>
-        <Wrapper>
-          <p className="text-xs">Ring</p>
-          <div className="bg-ring border-foreground h-16 w-16 border" />
-        </Wrapper>
-        <Wrapper>
-          <p className="text-xs">Chart 1</p>
-          <div className="bg-chart-1 border-foreground h-16 w-16 border" />
-        </Wrapper>
-        <Wrapper>
-          <p className="text-xs">Chart 2</p>
-          <div className="bg-chart-2 border-foreground h-16 w-16 border" />
-        </Wrapper>
-        <Wrapper>
-          <p className="text-xs">Chart 3</p>
-          <div className="bg-chart-3 border-foreground h-16 w-16 border" />
-        </Wrapper>
-        <Wrapper>
-          <p className="text-xs">Chart 4</p>
-          <div className="bg-chart-4 border-foreground h-16 w-16 border" />
-        </Wrapper>
-        <Wrapper>
-          <p className="text-xs">Chart 5</p>
-          <div className="bg-chart-5 border-foreground h-16 w-16 border" />
-        </Wrapper>
+        {colorItems.map(({ name, className }) => (
+          <Wrapper key={name}>
+            <p className="text-xs">{name}</p>
+            <Card
+              className={`${className} border-foreground h-16 w-16 border`}
+            />
+          </Wrapper>
+        ))}
       </div>
     </>
   )

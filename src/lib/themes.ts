@@ -8,8 +8,8 @@ export const themes = [
     label: "Minimal"
   },
   {
-    name: "black-white",
-    label: "Black & White"
+    name: "minimal-blue",
+    label: "Minimal (Blue)"
   },
 ]
 
