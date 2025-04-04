@@ -13,6 +13,8 @@ import { PopoverComponent } from "@/components/popovers"
 import { TooltipComponent } from "@/components/tooltips"
 import { ToggleComponent } from "@/components/toggles"
 import { SwitchComponent } from "@/components/switches"
+import { SelectComponent } from "@/components/selects"
+import { TextComponent } from "@/components/texts"
 
 export default function Home() {
   const { theme } = useThemeConfig()
@@ -21,7 +23,9 @@ export default function Home() {
     <div className="space-y-4 p-4">
       <p className="font-bold">Home</p>
       <div className="border-b"></div>
-      <p>Theme: {theme}</p>
+      <TextComponent />
+      <div className="border-b"></div>
+      <p className="">Theme: {theme}</p>
       <ThemeSelector />
       <div className="border-b"></div>
       <DarkModeToggle />
@@ -36,9 +40,12 @@ export default function Home() {
       <div className="border-b"></div>
       <CardsComponent />
       <div className="border-b"></div>
-      <div className="flex grid grid-cols-4 items-center">
+      <div className="flex grid grid-cols-5 items-center">
         <div>
           <PopoverComponent />
+        </div>
+        <div>
+          <SelectComponent />
         </div>
         <div>
           <TooltipComponent />

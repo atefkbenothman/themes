@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export function FontToggle() {
-  const [font, setFont] = useState<string>("sans")
+  const [font, setFont] = useState<string>("mono")
 
   return (
     <>

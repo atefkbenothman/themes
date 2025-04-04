@@ -1,11 +1,15 @@
 export const themes = [
   {
+    name: "default",
+    label: "Default"
+  },
+  {
     name: "minimal",
     label: "Minimal"
   },
   {
-    name: "does-not-exist",
-    label: "Does Not Exist"
+    name: "black-white",
+    label: "Black & White"
   },
 ]
 
