@@ -11,6 +11,18 @@ export const themes = [
     name: "minimal-blue",
     label: "Minimal (Blue)"
   },
+  {
+    name: "modern",
+    label: "Modern"
+  },
+  {
+    name: "claude",
+    label: "Claude"
+  },
+  {
+    name: "grok",
+    label: "Grok"
+  },
 ]
 
 export type Theme = (typeof themes)[number]

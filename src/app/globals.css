@@ -1,5 +1,9 @@
 @import "tailwindcss";
-@import "./themes.css";
+
+@import "./themes/theme-minimal.css";
+@import "./themes/theme-claude.css";
+@import "./themes/theme-grok.css";
+@import "./themes/theme-modern.css";
 
 @plugin "tailwindcss-animate";
 

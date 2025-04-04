@@ -95,7 +95,7 @@ export default function Home() {
       </div>
       <div className="border-b"></div>
       <p>Login</p>
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-2 gap-4">
         <div className="flex justify-center">
           <LoginForm />
         </div>
@@ -105,7 +105,7 @@ export default function Home() {
       </div>
       <div className="border-b"></div>
       <p>Examples</p>
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-2 gap-4">
         <div className="flex justify-center">
           <PaymentMethod />
         </div>
