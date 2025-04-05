@@ -44,9 +44,14 @@ export default function Home() {
       <p className="">Theme: {theme}</p>
       <ThemeSelector />
       <div className="border-b"></div>
-      <DarkModeToggle />
-      <div className="border-b"></div>
-      <FontToggle />
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <DarkModeToggle />
+        </div>
+        <div>
+          <FontToggle />
+        </div>
+      </div>
       <div className="border-b"></div>
       <TabsComponent />
       <div className="border-b"></div>

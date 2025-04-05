@@ -4,6 +4,7 @@
 @import "./themes/theme-claude.css";
 @import "./themes/theme-grok.css";
 @import "./themes/theme-modern.css";
+@import "./themes/theme-polar.css";
 
 @plugin "tailwindcss-animate";
 

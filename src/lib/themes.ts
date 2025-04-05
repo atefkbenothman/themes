@@ -23,6 +23,14 @@ export const themes = [
     name: "grok",
     label: "Grok"
   },
+  {
+    name: "polar",
+    label: "Polar"
+  },
+  {
+    name: "polar-base",
+    label: "Polar (Base)"
+  },
 ]
 
 export type Theme = (typeof themes)[number]
