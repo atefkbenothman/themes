@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { useTheme } from "next-themes"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Sun, Moon } from "lucide-react"
 
 export function DarkModeToggle() {
   const { setTheme, theme } = useTheme()
@@ -20,10 +21,10 @@ export function DarkModeToggle() {
         <Tabs defaultValue={theme ? theme : ""}>
           <TabsList>
             <TabsTrigger value="light" onClick={() => setTheme("light")}>
-              Light
+              <Sun />
             </TabsTrigger>
             <TabsTrigger value="dark" onClick={() => setTheme("dark")}>
-              Dark
+              <Moon />
             </TabsTrigger>
           </TabsList>
         </Tabs>
