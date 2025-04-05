@@ -24,6 +24,7 @@ import { useSoundEffect } from "@/hooks/use-sound-effect"
 import { AlertComponent } from "@/components/alerts"
 import { PaymentMethod } from "@/components/payment-methods"
 import { CookieSettings } from "@/components/cookie-settings"
+import { SettingsComponent } from "@/components/settings"
 
 export default function Home() {
   const { theme } = useThemeConfig()
@@ -98,6 +99,9 @@ export default function Home() {
           <SwitchComponent />
         </div>
       </div>
+      <div className="border-b"></div>
+      <p>Settings</p>
+      <SettingsComponent />
       <div className="border-b"></div>
       <p>Login</p>
       <div className="grid grid-cols-2 gap-4">
