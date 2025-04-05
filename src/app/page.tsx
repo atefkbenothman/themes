@@ -25,6 +25,8 @@ import { AlertComponent } from "@/components/alerts"
 import { PaymentMethod } from "@/components/payment-methods"
 import { CookieSettings } from "@/components/cookie-settings"
 import { SettingsComponent } from "@/components/settings"
+import { Mail } from "@/components/mail/mail"
+import { accounts, mails } from "@/components/mail/data"
 
 export default function Home() {
   const { theme } = useThemeConfig()
@@ -122,6 +124,14 @@ export default function Home() {
           <CookieSettings />
         </div>
       </div>
+      <div className="border-b"></div>
+      <Mail
+        accounts={accounts}
+        mails={mails}
+        defaultLayout={undefined}
+        defaultCollapsed={undefined}
+        navCollapsedSize={0}
+      />
       <div className="border-b"></div>
       <Colors />
     </div>
