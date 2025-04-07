@@ -116,7 +116,7 @@ export function SettingsComponent() {
             <div className="flex items-center justify-between">
               <div className="space-y-0.5">
                 <Label htmlFor="email-notifications">Email Notifications</Label>
-                <p className="text-secondary text-sm">
+                <p className="text-muted-foreground text-sm">
                   Receive email notifications about account activity.
                 </p>
               </div>
@@ -126,7 +126,7 @@ export function SettingsComponent() {
             <div className="flex items-center justify-between">
               <div className="space-y-0.5">
                 <Label htmlFor="marketing-emails">Marketing Emails</Label>
-                <p className="text-secondary text-sm">
+                <p className="text-muted-foreground text-sm">
                   Receive emails about new features and offers.
                 </p>
               </div>
