@@ -49,6 +49,7 @@
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.92 0 0);
   --ring: oklch(0.46 0.0078 258.35);
+  --input: oklch(0.89 0 0 / 38%);
 
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.14 0 0);
@@ -76,6 +77,7 @@
     --destructive-foreground: oklch(0.98 0 0);
     --border: oklch(0.27 0 0);
     --ring: oklch(0.46 0.0078 258.35);
+    --input: oklch(0.89 0 0 / 4%);
 
     --card: oklch(0.21 0.006 285.885);
     --card-foreground: oklch(0.98 0 0);
