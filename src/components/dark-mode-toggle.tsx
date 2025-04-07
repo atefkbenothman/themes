@@ -45,10 +45,10 @@ export function DarkModeToggle() {
               value={theme ? theme : "dark"}
               onValueChange={(value) => setTheme(value)}
             >
-              <SelectTrigger className="w-[60px]">
+              <SelectTrigger className="w-[80px]">
                 <SelectValue placeholder="Change dark mode" />
               </SelectTrigger>
-              <SelectContent className="w-[60px] min-w-0" align="start">
+              <SelectContent className="w-[80px]" align="start">
                 <SelectGroup>
                   <SelectItem value="dark">
                     <Moon />
