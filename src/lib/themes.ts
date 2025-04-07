@@ -31,6 +31,10 @@ export const themes = [
     name: "polar-base",
     label: "Polar (Base)"
   },
+  {
+    name: "midday",
+    label: "Midday"
+  },
 ]
 
 export type Theme = (typeof themes)[number]
