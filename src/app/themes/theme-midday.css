@@ -64,7 +64,7 @@
 
 
   @variant dark {
-    --background: oklch(0.18 0 0);
+    --background: oklch(0.15 0 0);
     --foreground: oklch(0.98 0 0);
     --primary: oklch(0.98 0 0);
     --primary-foreground: oklch(0.21 0.0059 285.88);
